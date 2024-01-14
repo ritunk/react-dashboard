@@ -24,7 +24,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link to="/react-dashboard" style={{ textDecoration: "none" }}>
           <span className="logo">Ritikadmin</span>
         </Link>
       </div>
