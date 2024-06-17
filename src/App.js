@@ -13,7 +13,7 @@ function App() {
   const { darkMode } = useContext(DarkModeContext);
 
   return (
-    <div className={darkMode ? "app dark" : "app"}>
+    <div className={darkMode ? "appdark" : "app"}>
       <BrowserRouter>
         <Routes>
           <Route path="/react-dashboard" element={<Home />} />

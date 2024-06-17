@@ -1,113 +1,115 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./sidebar.scss";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import ProductionQuantityLimitsIcon from "@mui/icons-material/ProductionQuantityLimits";
 import ChecklistIcon from "@mui/icons-material/Checklist";
 import DeliveryDiningIcon from "@mui/icons-material/DeliveryDining";
 import DataThresholdingOutlinedIcon from "@mui/icons-material/DataThresholdingOutlined";
-
 import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
-
 import HealthAndSafetyOutlinedIcon from "@mui/icons-material/HealthAndSafetyOutlined";
-
 import LoginIcon from "@mui/icons-material/Login";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import LogoutIcon from "@mui/icons-material/Logout";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
 
 const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className="sidebar">
-      <div className="top">
-        <Link to="/react-dashboard" style={{ textDecoration: "none" }}>
-          <span className="logo">Ritikadmin</span>
-        </Link>
+    <>
+      <div className="hamburger" onClick={handleToggle}>
+        {isOpen ? <CloseIcon /> : <MenuIcon />}
       </div>
-      <hr />
-      <div className="center">
-        <ul>
-          <p className="title">MAIN</p>
-
-          <li>
-            <DashboardIcon className="icon" />
-            <span>Dashboard</span>
-          </li>
-          <Link to="/users" style={{ textDecoration: "none" }}>
-            <p className="title">LISTS</p>
-            <li>
-              <PersonOutlineIcon className="icon" />
-              <span>Users</span>
-            </li>
+      <div className={`sidebar ${isOpen ? "active" : ""}`}>
+        <div className="top">
+          <Link to="/react-dashboard" style={{ textDecoration: "none" }}>
+            <span className="logo">Ritikadmin</span>
           </Link>
-          <Link to="/products" style={{ textDecoration: "none" }}>
+        </div>
+        <hr />
+        <div className="center">
+          <ul>
+            <p className="title">MAIN</p>
             <li>
-              <ProductionQuantityLimitsIcon className="icon" />
-              <span>Products</span>
+              <DashboardIcon className="icon" />
+              <span>Dashboard</span>
             </li>
-          </Link>
-
-          <li>
-            <ChecklistIcon className="icon" />
-            <span>Orders</span>
-          </li>
-
-          <li>
-            <DeliveryDiningIcon className="icon" />
-            <span>Delivery</span>
-          </li>
-          <p className="title">USEFUL</p>
-          <li>
-            <DataThresholdingOutlinedIcon className="icon" />
-            <span>Stats</span>
-          </li>
-
-          <li>
-            <NotificationsActiveOutlinedIcon className="icon" />
-            <span>Notifications</span>
-          </li>
-          <p className="title">SERVICE</p>
-
-          <li>
-            <HealthAndSafetyOutlinedIcon className="icon" />
-            <span>System Health</span>
-          </li>
-
-          <li>
-            <LoginIcon className="icon" />
-            <span>Logs</span>
-          </li>
-          <li>
-            <SettingsIcon className="icon" />
-            <span>Settings</span>
-          </li>
-          <p className="title">USER</p>
-          <li>
-            <AccountBoxIcon className="icon" />
-            <span>Profile</span>
-          </li>
-          <p className="title"></p>
-          <li>
-            <LogoutIcon className="icon" />
-            <span>Logout</span>
-          </li>
-        </ul>
+            <Link to="/users" style={{ textDecoration: "none" }}>
+              <p className="title">LISTS</p>
+              <li>
+                <PersonOutlineIcon className="icon" />
+                <span>Users</span>
+              </li>
+            </Link>
+            <Link to="/products" style={{ textDecoration: "none" }}>
+              <li>
+                <ProductionQuantityLimitsIcon className="icon" />
+                <span>Products</span>
+              </li>
+            </Link>
+            <li>
+              <ChecklistIcon className="icon" />
+              <span>Orders</span>
+            </li>
+            <li>
+              <DeliveryDiningIcon className="icon" />
+              <span>Delivery</span>
+            </li>
+            <p className="title">USEFUL</p>
+            <li>
+              <DataThresholdingOutlinedIcon className="icon" />
+              <span>Stats</span>
+            </li>
+            <li>
+              <NotificationsActiveOutlinedIcon className="icon" />
+              <span>Notifications</span>
+            </li>
+            <p className="title">SERVICE</p>
+            <li>
+              <HealthAndSafetyOutlinedIcon className="icon" />
+              <span>System Health</span>
+            </li>
+            <li>
+              <LoginIcon className="icon" />
+              <span>Logs</span>
+            </li>
+            <li>
+              <SettingsIcon className="icon" />
+              <span>Settings</span>
+            </li>
+            <p className="title">USER</p>
+            <li>
+              <AccountBoxIcon className="icon" />
+              <span>Profile</span>
+            </li>
+            <li>
+              <LogoutIcon className="icon" />
+              <span>Logout</span>
+            </li>
+          </ul>
+        </div>
+        <div className="bottom">
+          <div
+            className="colorOption"
+            onClick={() => dispatch({ type: "LIGHT" })}
+          ></div>
+          <div
+            className="colorOption"
+            onClick={() => dispatch({ type: "DARK" })}
+          ></div>
+        </div>
       </div>
-      <div className="bottom">
-        <div
-          className="colorOption"
-          onClick={() => dispatch({ type: "LIGHT" })}
-        ></div>
-        <div
-          className="colorOption"
-          onClick={() => dispatch({ type: "DARK" })}
-        ></div>
-      </div>
-    </div>
+    </>
   );
 };
 
