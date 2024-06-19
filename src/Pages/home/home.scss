@@ -1,32 +1,74 @@
-.home{
-  // background-color: rgb(185, 99, 113);
+// .home{
+//   // background-color: rgb(185, 99, 113);
+//   display: flex;
+//   .homeContainer{
+//     // background-color: lightblue;
+//     flex: 6;
+
+//     .widgets, .charts{
+//       display: flex;
+//       padding:20px;
+//       gap: 20px;
+//     }
+
+//     .charts{
+//       padding: 5px 20px;
+//     }
+
+//     .listContainer{
+//       -webkit-shadow:2px 4px 10px 1px rgba(0,0,0,0.47);
+//       box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+//       padding: 20px;
+//       margin: 20px;
+
+//       .listTitle{
+//         font-weight: 500;
+//         color: gray;
+//         margin-bottom: 15px;
+//       }
+//     }
+    
+//   }
+// }
+
+
+.home {
   display: flex;
-  .homeContainer{
-    // background-color: lightblue;
+
+  .homeContainer {
     flex: 6;
 
-    .widgets, .charts{
+    .widgets, .charts {
       display: flex;
-      padding:20px;
+      padding: 20px;
       gap: 20px;
+      flex-wrap: wrap; // Allow wrapping of items in mobile view
+
+      @media (max-width: 768px) { // Mobile view
+        display: grid;
+        grid-template-columns: 1fr 1fr; // Two columns grid
+
+        .widg {
+          width: 100%; // Make each widget take full width of its column
+        }
+      }
     }
 
-    .charts{
+    .charts {
       padding: 5px 20px;
     }
 
-    .listContainer{
-      -webkit-shadow:2px 4px 10px 1px rgba(0,0,0,0.47);
-      box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+    .listContainer {
+      -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+      box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
       padding: 20px;
       margin: 20px;
 
-      .listTitle{
+      .listTitle {
         font-weight: 500;
         color: gray;
         margin-bottom: 15px;
       }
     }
-    
   }
 }
