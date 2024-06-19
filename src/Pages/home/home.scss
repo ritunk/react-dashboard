@@ -32,6 +32,47 @@
 // }
 
 
+// .home {
+//   display: flex;
+
+//   .homeContainer {
+//     flex: 6;
+
+//     .widgets, .charts {
+//       display: flex;
+//       padding: 20px;
+//       gap: 20px;
+//       flex-wrap: wrap; // Allow wrapping of items in mobile view
+
+//       @media (max-width: 768px) { // Mobile view
+//         display: grid;
+//         grid-template-columns: 1fr 1fr; // Two columns grid
+
+//         .widg {
+//           width: 100%; // Make each widget take full width of its column
+//         }
+//       }
+//     }
+
+//     .charts {
+//       padding: 5px 20px;
+//     }
+
+//     .listContainer {
+//       -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+//       box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+//       padding: 20px;
+//       margin: 20px;
+
+//       .listTitle {
+//         font-weight: 500;
+//         color: gray;
+//         margin-bottom: 15px;
+//       }
+//     }
+//   }
+// }
+
 .home {
   display: flex;
 
@@ -46,10 +87,10 @@
 
       @media (max-width: 768px) { // Mobile view
         display: grid;
-        grid-template-columns: 1fr 1fr; // Two columns grid
+        grid-template-columns: 1fr; // Two columns grid
 
-        .widg {
-          width: 100%; // Make each widget take full width of its column
+        .widget {
+          width: 45%; // Make each widget take full width of its column
         }
       }
     }
@@ -72,3 +113,4 @@
     }
   }
 }
+
