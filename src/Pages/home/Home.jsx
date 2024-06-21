@@ -100,8 +100,12 @@ const Home = () => {
         </div>
 
         <div className="charts">
-          <Featured />
-          <Chart title="Last 6 months revenue" aspect={2 / 1} />
+          <Featured className="featured" />
+          <Chart
+            title="Last 6 months revenue"
+            aspect={2 / 1}
+            className="chart"
+          />
         </div>
 
         <div className="listContainer">
