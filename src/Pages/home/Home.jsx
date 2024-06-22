@@ -171,7 +171,6 @@ const Home = () => {
           <div className="listTitle">Latest Transactions</div>
 
           <List />
-          {/* Add more list items here for testing horizontal scroll */}
         </div>
       </div>
     </div>
