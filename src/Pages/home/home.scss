@@ -90,15 +90,15 @@
         grid-template-columns: 1fr; // Two columns grid
 
         .widget {
-          width: 45%; // Make each widget take full width of its column
+          width: 40%; // Make each widget take full width of its column
         }
 
         .featured{
-          width: 45%;
+          width: 40%;
         }
 
         .chart{
-          width: 45%;
+          width: 40%;
         }
       }
     }
