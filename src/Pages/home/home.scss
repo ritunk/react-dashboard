@@ -73,8 +73,68 @@
 //   }
 // }
 
+// .home {
+//   display: flex;
+
+//   .homeContainer {
+//     flex: 6;
+
+//     .widgets, .charts {
+//       display: flex;
+//       padding: 20px;
+//       gap: 20px;
+//       flex-wrap: wrap; // Allow wrapping of items in mobile view
+
+//       @media (max-width: 768px) { // Mobile view
+//         display: grid;
+//         grid-template-columns: 1fr; // Two columns grid
+
+//         .widget {
+//           width: 40%; // Make each widget take full width of its column
+//         }
+
+//         .featured{
+//           width: 40%;
+//         }
+
+//         .chart{
+//           width: 40%;
+//         }
+//       }
+//     }
+
+//     .charts {
+//       padding: 5px 20px;
+//     }
+
+//     .listContainer {
+//       -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+//       box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+//       padding: 20px;
+//       margin: 20px;
+
+//       .listTitle {
+//         font-weight: 500;
+//         color: gray;
+//         margin-bottom: 15px;
+//       }
+
+//       @media (max-width: 768px) { // Mobile view
+//         overflow-x: auto; // Allow horizontal scrolling
+//         white-space: nowrap; // Prevent items from wrapping to the next line
+//         -webkit-overflow-scrolling: touch;  // Smooth scrolling on iOS
+//       }
+//     }
+//   }
+// }
+
+
 .home {
   display: flex;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 
   .homeContainer {
     flex: 6;
@@ -83,28 +143,24 @@
       display: flex;
       padding: 20px;
       gap: 20px;
-      flex-wrap: wrap; // Allow wrapping of items in mobile view
+      flex-wrap: wrap;
 
-      @media (max-width: 768px) { // Mobile view
-        display: grid;
-        grid-template-columns: 1fr; // Two columns grid
+      @media (max-width: 768px) {
+        flex-direction: column;
+        padding: 10px;
 
-        .widget {
-          width: 40%; // Make each widget take full width of its column
-        }
-
-        .featured{
-          width: 40%;
-        }
-
-        .chart{
-          width: 40%;
+        .widget, .featured, .chart {
+          width: 80%;
         }
       }
     }
 
     .charts {
       padding: 5px 20px;
+
+      @media (max-width: 768px) {
+        padding: 5px 10px;
+      }
     }
 
     .listContainer {
@@ -112,6 +168,11 @@
       box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
       padding: 20px;
       margin: 20px;
+
+      @media (max-width: 768px) {
+        padding: 10px;
+        margin: 10px;
+      }
 
       .listTitle {
         font-weight: 500;
@@ -121,7 +182,4 @@
     }
   }
 }
-
-
-
 

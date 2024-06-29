@@ -18,12 +18,32 @@
 
 // export default List;
 
-import React, { useRef } from "react";
+// import React, { useRef } from "react";
+// import Sidebar from "../../components/sidebar/Sidebar";
+// import Navbar from "../../components/navbar/Navbar";
+// import "./list.scss";
+// import Datatable from "../../components/datatable/Datatable";
+// import { useSwipeable } from "react-swipeable";
+
+// const List = () => {
+//   return (
+//     <div className="list">
+//       <Sidebar />
+//       <div className="listContainer">
+//         <Navbar />
+//         <Datatable />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default List;
+
+import React from "react";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import "./list.scss";
 import Datatable from "../../components/datatable/Datatable";
-import { useSwipeable } from "react-swipeable";
 
 const List = () => {
   return (
