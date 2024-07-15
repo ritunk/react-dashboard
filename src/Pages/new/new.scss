@@ -93,6 +93,10 @@
             font-weight: bold;
             cursor: pointer;
             margin-top: 10px;
+
+            @media (max-width:768px){
+               width: 100%;
+            }
           }
         }
       }
