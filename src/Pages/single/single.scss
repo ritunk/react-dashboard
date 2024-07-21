@@ -89,6 +89,11 @@
     
      flex-direction: column;
      
+     .singleContainer{
+       .top{
+        flex-direction: column;
+       }
+     }
   }
 
  
