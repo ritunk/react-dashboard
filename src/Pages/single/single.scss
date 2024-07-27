@@ -94,7 +94,15 @@
         flex-direction: column;
         padding: 20px;
         padding-top: 290px;
+
+        .left{
+          .item{
+            flex-direction: column;
+          }
+        }
        }
+
+
      }
   }
 
